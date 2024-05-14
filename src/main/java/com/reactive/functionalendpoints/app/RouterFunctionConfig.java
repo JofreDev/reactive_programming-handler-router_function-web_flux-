@@ -20,7 +20,8 @@ public class RouterFunctionConfig {
                 .andRoute(GET("/api/v2/products/{id}")/*.and(contentType(MediaType.APPLICATION_JSON))*/, productoHandler::verDetalle)
                 .andRoute(POST("/api/v2/products"),productoHandler::crear)
                 .andRoute(PUT("/api/v2/products/{id}"),productoHandler::editar)
-                .andRoute(DELETE("/api/v2/products/{id}"),productoHandler::eliminar);
+                .andRoute(DELETE("/api/v2/products/{id}"),productoHandler::eliminar)
+                .andRoute(POST("/api/v2/products/upload/{id}"),productoHandler::upload)
+                .andRoute(POST("/api/v2/products/crear"),productoHandler::crearConFoto);
     }
-
 }
