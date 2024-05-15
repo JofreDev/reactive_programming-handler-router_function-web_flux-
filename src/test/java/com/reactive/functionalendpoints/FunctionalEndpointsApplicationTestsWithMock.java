@@ -26,9 +26,10 @@ import java.util.List;
 *
 * 'gradle test' o 'gradlew test' -> Comando de ejecución de test desde la consola */
 
-/*Levanta un server para hacer pruebas*/
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class FunctionalEndpointsApplicationTests {
+@AutoConfigureWebTestClient
+/*No levanta todo un server para hacer las pruebas*/
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK)
+class FunctionalEndpointsApplicationTestsWithMock {
 
 	@Autowired
 	private  WebTestClient client;
