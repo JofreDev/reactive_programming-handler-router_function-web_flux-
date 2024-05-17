@@ -55,8 +55,10 @@ public class ProductoServiceImpl implements ProductoService{
                 .accept(MediaType.APPLICATION_JSON)
                 // Tipo de contenido que estamos enviando
                 .contentType(MediaType.APPLICATION_JSON)
-                .body(BodyInserters.fromValue(producto))
-                .exchangeToMono(clientResponse -> clientResponse.bodyToMono(Producto.class));
+                .bodyValue(producto)
+                /// usar mejor .retrieve porque es a más alto nivel y hace conversiones automaticas
+                .retrieve()
+                .bodyToMono(Producto.class);
     }
 
     @Override

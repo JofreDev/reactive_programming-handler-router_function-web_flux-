@@ -6,9 +6,13 @@ import com.reactive.webfluxclient.models.services.ProductoService;
 import com.reactive.webfluxclient.models.services.ProductoServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.core.codec.DecodingException;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.BodyInserters;
+import org.springframework.web.reactive.function.client.WebClientResponseException;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
@@ -49,7 +53,20 @@ public class ProductoHandler {
                     return productoService.save(producto);
                 }).flatMap( producto -> ServerResponse.created(URI.create("/api/client/products".concat(producto.getId())))
                         .contentType(MediaType.APPLICATION_JSON)
-                        .body(BodyInserters.fromValue(producto)));
+                        .body(BodyInserters.fromValue(producto)))
+                .onErrorResume(error -> {
+                    if (error instanceof WebClientResponseException) {
+                        WebClientResponseException errorResponse = (WebClientResponseException) error;
+                        if (errorResponse.getStatusCode() == HttpStatus.BAD_REQUEST) {
+                            return ServerResponse.badRequest()
+                                    .contentType(MediaType.APPLICATION_JSON)
+                                    .body(BodyInserters.fromValue(errorResponse.getResponseBodyAsString()));
+                        }
+                        return Mono.error(errorResponse);
+                    }
+                    return Mono.error(error);
+
+                });
 
 
     }
