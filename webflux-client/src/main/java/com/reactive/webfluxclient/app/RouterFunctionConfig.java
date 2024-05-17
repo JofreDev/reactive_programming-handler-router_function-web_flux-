@@ -20,6 +20,7 @@ public class RouterFunctionConfig {
                 //.and(contentType(MediaType.APPLICATION_JSON)) -> Valida la estructura del request
                 .andRoute(GET("/api/client/products/{id}")/*.and(contentType(MediaType.APPLICATION_JSON))*/, productoHandler::ver)
                 .andRoute(POST("/api/client/products")/*.and(contentType(MediaType.APPLICATION_JSON))*/, productoHandler::crear)
+                .andRoute(POST("/api/client/products/upload/{id}")/*.and(contentType(MediaType.APPLICATION_JSON))*/, productoHandler::upload)
                 .andRoute(PUT("/api/client/products/{id}")/*.and(contentType(MediaType.APPLICATION_JSON))*/, productoHandler::editar)
                 .andRoute(DELETE("/api/client/products/{id}")/*.and(contentType(MediaType.APPLICATION_JSON))*/, productoHandler::eliminar);
     }
