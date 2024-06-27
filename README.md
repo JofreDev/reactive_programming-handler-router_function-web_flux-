@@ -34,33 +34,31 @@ In conclusion, reactive programming in Java with Reactor provides a modern and p
 **************************************
 **************************************
 
-- ## Microservice  **webflux api-rest**
-> ### WebFlux API-REST
+> [!NOTE] 
+> ## 1. Microservice  **webflux api-rest**
 
 The **WebFlux API-REST** microservice has been developed in Java using reactive programming, implementing the WebFlux framework to optimize performance and responsiveness. This service is designed to operate in an inherently reactive manner, leveraging **handlers** and **functional endpoints** with **ServerResponse** to handle requests efficiently.
 
 >## Key Concepts
+>### Handlers
+>In WebFlux, handlers are components that manage incoming HTTP requests. They act as controllers that process the request, interact with the model, and return a response.
 
-### Handlers
-In WebFlux, handlers are components that manage incoming HTTP requests. They act as controllers that process the request, interact with the model, and return a response.
+>### Functional Endpoints
+>Functional endpoints provide a declarative and concise way to define routes and handle requests in WebFlux. Instead of using annotated controllers, routes and their corresponding handlers are defined functionally, improving code clarity and maintainability.
 
-### Functional Endpoints
-Functional endpoints provide a declarative and concise way to define routes and handle requests in WebFlux. Instead of using annotated controllers, routes and their corresponding handlers are defined functionally, improving code clarity and maintainability.
+>### ServerResponse
+>`ServerResponse` is a WebFlux class used to construct and return HTTP responses reactively. It allows the structure and content of the response to be defined in a non-blocking manner, adhering to the reactive paradigm.
 
-### ServerResponse
-`ServerResponse` is a WebFlux class used to construct and return HTTP responses reactively. It allows the structure and content of the response to be defined in a non-blocking manner, adhering to the reactive paradigm.
+>### Error Handling
+>Error handling in WebFlux involves capturing and processing exceptions reactively. This ensures that failed operations are appropriately managed, providing meaningful responses and avoiding blocks in the data flow.
 
-### Error Handling
-Error handling in WebFlux involves capturing and processing exceptions reactively. This ensures that failed operations are appropriately managed, providing meaningful responses and avoiding blocks in the data flow.
-
+> [!IMPORTANT] 
 > ## Microservice Capabilities
-
-The microservice exposes a set of CRUD (Create, Read, Update, and Delete) operations for both products and categories. The specific functionalities exposed are:
-
-1. **Create a product**
-2. **Edit an existing product**
-3. **Delete a product**
-4. **Create a product with an attached photo**
+> The microservice exposes a set of CRUD (Create, Read, Update, and Delete) operations for both products and categories. The specific functionalities exposed are:
+> 1. **Create a product**
+> 2. **Edit an existing product**
+> 3. **Delete a product**
+> 4. **Create a product with an attached photo**
 
 ## Reactive Approach and Error Handling
 
@@ -70,11 +68,13 @@ This approach ensures efficient and scalable operation, aligning with best pract
 
 **************************************
 **************************************
-2. Microservice **webflux client**
+> [!NOTE] 
+> ## 2. Microservice **webflux client**
 **************************************
 **************************************
+> [!NOTE] 
+> 3. Data base **Mongo DB**
 
-3. Data base **Mongo DB**
 
-
-## *How run project* 
+> [!IMPORTANT] 
+> ## *How run project* 
