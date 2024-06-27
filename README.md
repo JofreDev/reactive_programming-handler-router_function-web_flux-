@@ -5,22 +5,17 @@
 
 ## *Reactive programming context* 
 
-### - Introduction to Reactive Programming in Java with Reactor
-
-Reactive programming in Java with Reactor and other frameworks has revolutionized the way modern applications are designed and developed. This paradigm focuses on efficiently handling asynchronous data streams and real-time events, offering significant benefits in terms of scalability, resilience, and responsiveness.
+>###  Introduction to Reactive Programming in Java with Reactor
+>Reactive programming in Java with Reactor and other frameworks has revolutionized the way modern applications are designed and developed. This paradigm focuses on efficiently handling asynchronous data streams and real-time events, offering significant benefits in terms of scalability, resilience, and responsiveness.
 
 >####  Core Reactive Concepts and Patterns
+>At the heart of reactive programming with Reactor are several key patterns and concepts, such as the **Observer Pattern** and the **Reactive Streams Pattern**. These patterns enable developers to manage sequences of asynchronous events efficiently, ensuring that applications can handle multiple concurrent inputs consistently and without blocking.
 
-At the heart of reactive programming with Reactor are several key patterns and concepts, such as the **Observer Pattern** and the **Reactive Streams Pattern**. These patterns enable developers to manage sequences of asynchronous events efficiently, ensuring that applications can handle multiple concurrent inputs consistently and without blocking.
+> ####  Reactor and Spring WebFlux
+>Reactor is a fundamental library for reactive programming in Java, widely used within the Spring Framework ecosystem, particularly in **Spring WebFlux**. WebFlux provides a programming model based on reactive streams, allowing Java applications to handle non-blocking operations efficiently. Reactor, with its powerful and consistent API, facilitates the creation and manipulation of reactive streams, offering operators for declarative data transformation, filtering, and combining.
 
-> #### - Reactor and Spring WebFlux
-
-Reactor is a fundamental library for reactive programming in Java, widely used within the Spring Framework ecosystem, particularly in **Spring WebFlux**. WebFlux provides a programming model based on reactive streams, allowing Java applications to handle non-blocking operations efficiently. Reactor, with its powerful and consistent API, facilitates the creation and manipulation of reactive streams, offering operators for declarative data transformation, filtering, and combining.
-
-> #### - Benefits of Reactive Programming with Reactor
-
-Adopting Reactor and reactive programming offers several key benefits:
-
+> ####  Benefits of Reactive Programming with Reactor
+>Adopting Reactor and reactive programming offers several key benefits:
 - **Scalability and Performance:** Ability to efficiently handle large volumes of concurrent requests, leveraging available resources effectively.
 
 - **Resilience:** Improved ability of the system to manage errors and failures robustly, minimizing impact on the end-user experience.
@@ -36,8 +31,7 @@ In conclusion, reactive programming in Java with Reactor provides a modern and p
 
 > [!NOTE] 
 > ## 1. Microservice  **webflux api-rest**
-
-The **WebFlux API-REST** microservice has been developed in Java using reactive programming, implementing the WebFlux framework to optimize performance and responsiveness. This service is designed to operate in an inherently reactive manner, leveraging **handlers** and **functional endpoints** with **ServerResponse** to handle requests efficiently.
+>The **WebFlux API-REST** microservice has been developed in Java using reactive programming, implementing the WebFlux framework to optimize performance and responsiveness. This service is designed to operate in an inherently reactive manner, leveraging **handlers** and **functional endpoints** with **ServerResponse** to handle requests efficiently.
 
 >## Key Concepts
 >### Handlers
