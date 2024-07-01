@@ -64,10 +64,63 @@ This approach ensures efficient and scalable operation, aligning with best pract
 **************************************
 > [!NOTE] 
 > ## 2. Microservice **webflux client**
+>### Webflux-client: API Client in WebFlux
+>The `Webflux-client` microservice acts as a typical client that consumes a REST API implemented with WebFlux, leveraging the functionalities exposed by the API to perform CRUD operations. To ensure efficient communication and proper error handling, various tools and techniques are utilized.
+
+>#### WebClient
+>`WebClient` is a component provided by Spring WebFlux for making HTTP requests in a reactive and non-blocking manner. Some key features of `WebClient` include:
+- **Reactivity**: Based on the Reactor project, `WebClient` allows for declarative programming of asynchronous operations without the need to manage threads or concurrency directly.
+- **Non-blocking**: Requests and responses are handled in a non-blocking manner, improving the performance and scalability of the client.
+- **Streaming**: Supports data streaming, which is useful for handling large volumes of information efficiently.
+- **Encoding and Decoding**: Uses the same infrastructure as the server to encode and decode the content of requests and responses, ensuring optimal compatibility and efficiency.
+
+>#### Error Handling
+>To effectively manage errors, specific error handling operators and techniques are employed to customize responses:
+- **onErrorResume**: Provides an alternative in case of an error, recovering from failures and continuing with an alternative operation.
+- **doOnError**: Executes a specific action when an error occurs, allowing for logging or cleanup tasks.
+- **retrieve()**: This method initiates the processing of the HTTP response and allows chaining additional operators for handling the response and errors.
+- **Customized Response**: The structure of errors can be fully customized, providing clear and detailed messages about what went wrong, enhancing debugging capabilities and user experience.
+
+In summary, `Webflux-client` uses `WebClient` to perform HTTP operations in a reactive and non-blocking manner while implementing robust error handling using specific operators and response customization. This ensures efficient and reliable communication with the API, allowing for optimal use of the functionalities exposed by the microservice.
+> 
 **************************************
 **************************************
 > [!NOTE] 
-> 3. Data base **Mongo DB**
+> ## 3. Data base **Mongo DB**
+> ### Reactive MongoDB with Java and Spring Boot
+> In this project, MongoDB is used in a reactive manner with Spring Boot, WebFlux, and Reactor. This approach capitalizes on the advantages of non-blocking, asynchronous data processing, which is essential for building high-performance and scalable applications.
+
+>#### Reactive MongoDB API
+>MongoDB's reactive programming interface in Java, facilitated by Spring Data Reactive MongoDB, leverages the principles of reactive programming to enhance database operations. Here's a detailed explanation:
+1. **Non-blocking I/O**:
+   - Reactive MongoDB operations are inherently non-blocking. This means that database queries and updates do not hold up the execution of the application, allowing it to continue processing other tasks. This is particularly advantageous for applications that need to handle a high volume of concurrent operations.
+
+2. **Backpressure**:
+   - Reactive Streams, a core part of the reactive programming paradigm, provide backpressure. This ensures that the application can regulate the flow of data between the producer (database) and the consumer (application), preventing the system from becoming overwhelmed by too many concurrent requests.
+
+3. **Event-Driven Architecture**:
+   - Reactive programming promotes an event-driven approach, where the application reacts to data changes and events in real-time. This is beneficial for applications that require real-time updates and responsiveness.
+
+>#### Spring Data Reactive MongoDB
+>Spring Data Reactive MongoDB is an integration module that provides reactive support for MongoDB. Here are some key aspects of this integration:
+1. **Reactive Repositories**:
+   - Spring Data Reactive MongoDB provides a repository abstraction similar to traditional Spring Data repositories but with reactive support. This means that CRUD operations return reactive types such as `Mono` and `Flux` instead of blocking types.
+   - `Mono` represents a single asynchronous value (or empty), suitable for single result queries.
+   - `Flux` represents a stream of asynchronous values, suitable for queries returning multiple results.
+
+2. **WebClient Integration**:
+   - `WebClient` is a non-blocking, reactive client for performing HTTP requests, provided by Spring WebFlux. It integrates seamlessly with reactive MongoDB repositories to fetch and manipulate data in a reactive manner.
+   - `WebClient` allows chaining of operators to handle responses, errors, and backpressure effectively.
+
+3. **Error Handling**:
+   - Reactive programming with MongoDB involves handling errors in a non-blocking way. Operators such as `onErrorResume`, `doOnError`, and `retry` help manage errors gracefully.
+   - `onErrorResume` allows fallback logic in case of an error.
+   - `doOnError` is useful for logging or side effects when an error occurs.
+   - `retry` can automatically retry the operation a specified number of times upon encountering errors.
+
+>#### Entities used in the project 
+1. **Product**:
+2. **Category**: 
 
 
 > [!IMPORTANT] 
