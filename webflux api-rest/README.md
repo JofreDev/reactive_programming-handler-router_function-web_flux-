@@ -7,18 +7,18 @@
 > ## Microservice  **webflux api-rest**
 > ### Models
 > * > ## services :
->   > - **ProductoService:** Interfaz que define el contrato del servicio de producto, estableciendo las operaciones relacionadas con la base de datos.
->   > - **ProductoServiceImpl:** Implementación del servicio de producto, utilizando `CategoriaDao` y `ProductoDao` para realizar las operaciones en la base de datos.
+>   > - **ProductoService:** Interface that defines the contract for the product service, establishing the operations related to the database.
+>   > - **ProductoServiceImpl:** Implementation of the product service, utilizing `CategoriaDao` and `ProductoDao` to perform database operations.
 > * > ## dao :
->   > - **CategoriaDao:** DAO reactivo para la entidad `Categoria`.
->   > - **ProductoDao:** DAO reactivo para la entidad `Producto`.
+>   > - **CategoriaDao:** Reactive DAO for the `Categoria` entity.
+>   > - **ProductoDao:** Reactive DAO for the `Producto` entity.
 > * > ## documents :
->   > - **Categoria:** Representa las categorías de productos en un supermercado.
->   > - **Producto:** Representa los productos del supermercado.
+>   > - **Categoria:** Represents the product categories in a supermarket.
+>   > - **Producto:** Represents the products in a supermarket.
 > ### Handler
-> * > **ProductoHandler:** Maneja las solicitudes HTTP relacionadas con los productos y delega la lógica de negocio al servicio correspondiente.
+> * > **ProductoHandler:** Handles HTTP requests related to products and delegates business logic to the corresponding service.
 > ### App
-> * > **RouterFunctionConfig:** Define las rutas HTTP y las asocia con los métodos del handler correspondiente.
+> * > **RouterFunctionConfig:** Defines the HTTP routes and associates them with the methods of the designated handler.
 
 
 > [!IMPORTANT] 
