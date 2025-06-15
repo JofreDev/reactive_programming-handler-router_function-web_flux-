@@ -40,7 +40,7 @@ jobs:
         working-directory: "./webflux api-rest"
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: ../../gradlew build sonar \
+        run: ./gradlew build sonar \
           -Dsonar.projectKey=tu_clave \
           -Dsonar.host.url=https://sonarcloud.io \
           -Dsonar.login=$SONAR_TOKEN
