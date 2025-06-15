@@ -43,7 +43,9 @@ jobs:
         working-directory: "./webflux api-rest"
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: ./gradlew build sonar \
-          -Dsonar.projectKey=JofreDev_reactive_programming-handler-router_function-web_flux- \
-          -Dsonar.host.url=https://sonarcloud.io \
-          -Dsonar.login=$SONAR_TOKEN
+        run: |
+          ./gradlew build sonar \
+            -Dsonar.projectKey=JofreDev_reactive_programming-handler-router_function-web_flux- \
+            -Dsonar.organization=JofreDev \
+            -Dsonar.host.url=https://sonarcloud.io \
+            -Dsonar.login=$SONAR_TOKEN
