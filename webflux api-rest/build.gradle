@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.2.5'
 	id 'io.spring.dependency-management' version '1.1.4'
+	id "org.sonarqube" version "6.2.0.5505"
 }
 
 group = 'com.reactive'
@@ -31,6 +32,14 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'io.projectreactor:reactor-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+sonar {
+  properties {
+    property "sonar.projectKey", "JofreDev_reactive_programming-handler-router_function-web_flux-"
+    property "sonar.organization", "edu-gavidia"
+    property "sonar.host.url", "https://sonarcloud.io"
+  }
 }
 
 tasks.named('test') {
